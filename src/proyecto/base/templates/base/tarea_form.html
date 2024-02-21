@@ -1,0 +1,25 @@
+{% extends 'base/principal.html' %}
+{% block content %}
+
+<div class="barra-superior">
+    <a href="{% url 'tareas' %}">&#x2190; Volver</a>
+</div>
+
+<!--metod puede ser get o post*/
+#action es a que url queremos enviar el formulario-
+form. el as_p es el estilo duro del formulario
+csrf token permite prevenir un agujero de seguridad
+falsificacion de solicitud entre sitios-->
+
+<div class="cuerpo-tarjeta">
+    <form method="POST" action="">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input class="boton" type="submit" value="Enviar">
+
+</form>
+
+
+</div>
+
+{% endblock content %}
